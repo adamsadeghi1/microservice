@@ -17,12 +17,12 @@ public class Movie {
     @Column(nullable = true)
     private String author ;
     @Column(nullable = true)
-    private LocalDate publishedDate ;
+    private LocalDate publisheddate;
 
     public Movie( String name, String author, LocalDate publishedDate) {
         this.name = name;
         this.author = author;
-        this.publishedDate = publishedDate;
+        this.publisheddate = publishedDate;
     }
 
     public Movie() {
@@ -53,10 +53,10 @@ public class Movie {
     }
 
     public LocalDate getPublishedDate() {
-        return publishedDate;
+        return publisheddate;
     }
 
     public void setPublishedDate(LocalDate publishedDate) {
-        this.publishedDate = publishedDate;
+        this.publisheddate = publishedDate;
     }
 }
