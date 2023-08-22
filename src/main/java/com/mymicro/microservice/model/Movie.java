@@ -1,8 +1,9 @@
 package com.mymicro.microservice.model;
 
-import jakarta.persistence.*;
 
 
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
 

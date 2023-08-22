@@ -1,6 +1,5 @@
 package com.mymicro.microservice.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mymicro.microservice.model.Movie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +12,11 @@ import java.util.List;
 @RequestMapping("/api")
 public class MovieController {
     private final MovieService movieService;
-    private final ObjectMapper objectMapper;
 
-    public MovieController(MovieService movieService, ObjectMapper objectMapper) {
+
+    public MovieController(MovieService movieService) {
         this.movieService = movieService;
-        this.objectMapper = objectMapper;
+
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
