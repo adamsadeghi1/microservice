@@ -22,7 +22,7 @@ public class RawgController {
     @Autowired
     private RawgService rawgService;
 
-    @CrossOrigin(origins = "http://localhost:5174")
+    @CrossOrigin(origins = "http://localhost:5174") // this should be the address of your React-app server
     @GetMapping("/games")
     public ResponseEntity<List<Game>> getAllGames () throws ExecutionException, InterruptedException {
         var gamesFuture = rawgService.getGamesAsync("games");

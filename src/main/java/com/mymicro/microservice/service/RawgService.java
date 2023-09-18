@@ -21,7 +21,7 @@ import java.util.concurrent.CompletableFuture;
 @Service
 public class RawgService {
     public static final String BASE_URL="https://api.rawg.io/api";
-    @Value("${api.param.key}")
+    @Value("${api.param.key}") // this value is red from application-secret.properties
     private String apiParamKey;
     private static Logger log = LoggerFactory.getLogger(RawgService.class);
 
