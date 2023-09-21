@@ -1,7 +1,8 @@
-package com.mymicro.microservice.model;
+package com.mymicro.microservice.model.rawgModel;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.mymicro.microservice.model.rawgModel.Game;
 
 import java.util.List;
 

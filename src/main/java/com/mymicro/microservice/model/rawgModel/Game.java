@@ -1,4 +1,4 @@
-package com.mymicro.microservice.model;
+package com.mymicro.microservice.model.rawgModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -7,6 +7,25 @@ public class Game {
     int id;
     String name;
 
+    String background_image;
+
+    Platforms[] parent_platforms;
+
+    public Platforms[] getParent_platforms() {
+        return parent_platforms;
+    }
+
+    public void setParent_platforms(Platforms[] parent_platforms) {
+        this.parent_platforms = parent_platforms;
+    }
+
+    public String getBackground_image() {
+        return background_image;
+    }
+
+    public void setBackground_image(String background_image) {
+        this.background_image = background_image;
+    }
     public int getId() {
         return id;
     }
