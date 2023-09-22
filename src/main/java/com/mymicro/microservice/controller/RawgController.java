@@ -2,6 +2,7 @@ package com.mymicro.microservice.controller;
 
 import com.mymicro.microservice.model.rawgModel.Game;
 import com.mymicro.microservice.model.rawgModel.GameProcessed;
+import com.mymicro.microservice.model.rawgModel.Genre;
 import com.mymicro.microservice.service.RawgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,4 +30,15 @@ public class RawgController {
 
         return new ResponseEntity<>(games, HttpStatus.OK);
     }
+
+    @CrossOrigin(origins = "http://localhost:5180") // this should be the address of your React-app server
+    @GetMapping("/genres")
+    public ResponseEntity<List<Genre>> getAllGenres () throws ExecutionException, InterruptedException {
+        var genresFuture = rawgService.getGenresAsync("genres");
+        List<Genre> genres = genresFuture.get();
+
+        return new ResponseEntity<>(genres, HttpStatus.OK);
+    }
+
+
 }

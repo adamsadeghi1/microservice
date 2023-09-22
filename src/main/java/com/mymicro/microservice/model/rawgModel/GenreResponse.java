@@ -3,18 +3,16 @@ package com.mymicro.microservice.model.rawgModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class GameApiResponse {
-    private List<Game> results;
-
-    public List<Game> getResults() {
+public class GenreResponse {
+    List<Genre> results;
+    public List<Genre> getResults() {
         return results;
     }
 
-    public void setResults(List<Game> results) {
-        this.results = results;
+    public void setResults(List<Genre> result) {
+        this.results = result;
     }
 }

@@ -11,6 +11,16 @@ public class Game {
 
     Platforms[] parent_platforms;
 
+    int metacritic ;
+
+    public int getMetacritic() {
+        return metacritic;
+    }
+
+    public void setMetacritic(int metacritic) {
+        this.metacritic = metacritic;
+    }
+
     public Platforms[] getParent_platforms() {
         return parent_platforms;
     }
