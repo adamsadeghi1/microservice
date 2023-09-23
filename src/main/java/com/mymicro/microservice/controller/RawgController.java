@@ -7,10 +7,7 @@ import com.mymicro.microservice.service.RawgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -24,8 +21,8 @@ public class RawgController {
 
     @CrossOrigin(origins = "http://localhost:5180") // this should be the address of your React-app server
     @GetMapping("/games")
-    public ResponseEntity<List<GameProcessed>> getAllGames () throws ExecutionException, InterruptedException {
-        var gamesFuture = rawgService.getGamesAsync("games");
+    public ResponseEntity<List<GameProcessed>> getAllGames (@RequestParam(name = "genres", required = false) String genresParamValue) throws ExecutionException, InterruptedException {
+        var gamesFuture = rawgService.getGamesAsync("games", genresParamValue);
         List<GameProcessed> games = gamesFuture.get();
 
         return new ResponseEntity<>(games, HttpStatus.OK);

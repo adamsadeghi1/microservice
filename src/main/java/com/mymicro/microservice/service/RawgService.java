@@ -33,9 +33,9 @@ public class RawgService {
         return response.thenApply( res -> res.getResults());
     }
 
-    public CompletableFuture<List<GameProcessed>>  getGamesAsync(String url){
+    public CompletableFuture<List<GameProcessed>>  getGamesAsync(String url, String genresParamValue){
         log.info("Reading Data from {} end-point",url );
-        String fullUrl = BASE_URL + "/" + url + apiParamKey +"&page=1";
+        String fullUrl = BASE_URL + "/" + url + apiParamKey +"&page=1" +(genresParamValue!= null? "&genres="+genresParamValue:"");
 
         CompletableFuture<GameApiResponse> response =  getAsync(fullUrl, GameApiResponse.class);
         return response.thenApply( res -> processGameResult(res).getResults());
