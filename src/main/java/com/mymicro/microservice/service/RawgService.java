@@ -33,12 +33,16 @@ public class RawgService {
         return response.thenApply( res -> res.getResults());
     }
 
-    public CompletableFuture<List<GameProcessed>>  getGamesAsync(String url, String genresParamValue , String platformParamValue, String orderingParamValue){
+    public CompletableFuture<List<GameProcessed>>  getGamesAsync(String url, String genresParamValue ,
+                                                                 String platformParamValue,
+                                                                 String orderingParamValue,
+                                                                 String searchParamValue){
         log.info("Reading Data from {} end-point",url );
         String fullUrl = BASE_URL + "/" + url + apiParamKey +"&page=1" +
                 (genresParamValue!= null? "&genres="+genresParamValue:"") +
                 (platformParamValue!= null?"&platforms="+platformParamValue: "") +
-                (orderingParamValue!= null?"&ordering="+orderingParamValue: "");
+                (orderingParamValue!= null?"&ordering="+orderingParamValue: "") +
+                (searchParamValue!= null?"&search="+searchParamValue: "");
 
         CompletableFuture<GameApiResponse> response =  getAsync(fullUrl, GameApiResponse.class);
         return response.thenApply( res -> processGameResult(res).getResults());
@@ -85,7 +89,8 @@ public class RawgService {
                             game.getName(),
                             game.getBackground_image(),
                             platforms,
-                            game.getMetacritic()
+                            game.getMetacritic(),
+                            game.getRating_top()
                     );
                 })
                 .collect(Collectors.toList());

@@ -13,6 +13,16 @@ public class Game {
 
     int metacritic ;
 
+    int rating_top;
+
+    public int getRating_top() {
+        return rating_top;
+    }
+
+    public void setRating_top(int rating_top) {
+        this.rating_top = rating_top;
+    }
+
     public int getMetacritic() {
         return metacritic;
     }

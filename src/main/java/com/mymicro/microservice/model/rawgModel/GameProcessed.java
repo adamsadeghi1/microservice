@@ -11,12 +11,23 @@ public class GameProcessed {
 
     int metacritic ;
 
-    public GameProcessed(int id, String name, String background_image, List<Platform> parent_platforms, int metacritic) {
+    int rating_top;
+
+    public GameProcessed(int id, String name, String background_image, List<Platform> parent_platforms, int metacritic, int rating_top) {
         this.id = id;
         this.name = name;
         this.background_image = background_image;
         this.parent_platforms = parent_platforms;
         this.metacritic = metacritic;
+        this.rating_top = rating_top;
+    }
+
+    public int getRating_top() {
+        return rating_top;
+    }
+
+    public void setRating_top(int rating_top) {
+        this.rating_top = rating_top;
     }
 
     public int getMetacritic() {

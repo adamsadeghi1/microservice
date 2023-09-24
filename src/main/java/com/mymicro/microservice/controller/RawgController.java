@@ -21,8 +21,9 @@ public class RawgController {
     @GetMapping("/games")
     public ResponseEntity<List<GameProcessed>> getAllGames (@RequestParam(name = "genres", required = false) String genresParamValue,
                                                             @RequestParam(name = "platforms", required = false) String platformParamValue,
-                                                            @RequestParam(name = "ordering",required = false) String orderingParamValue) throws ExecutionException, InterruptedException {
-        var gamesFuture = rawgService.getGamesAsync("games", genresParamValue, platformParamValue, orderingParamValue);
+                                                            @RequestParam(name = "ordering",required = false) String orderingParamValue,
+                                                            @RequestParam(name = "search",required = false) String searchParamValue) throws ExecutionException, InterruptedException {
+        var gamesFuture = rawgService.getGamesAsync("games", genresParamValue, platformParamValue, orderingParamValue, searchParamValue);
         List<GameProcessed> games = gamesFuture.get();
 
         return new ResponseEntity<>(games, HttpStatus.OK);
