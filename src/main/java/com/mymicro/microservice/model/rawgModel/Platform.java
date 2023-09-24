@@ -1,5 +1,8 @@
 package com.mymicro.microservice.model.rawgModel;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Platform {
         int id ;
         String name;
