@@ -11,9 +11,9 @@
 
 	<groupId>com.my-micro</groupId>
 	<artifactId>microservice</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>microservice</name>
-	<description>micro service end point provider</description>
+	<description>micro-service end point provider</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
